@@ -5,8 +5,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MilitaryBaseRater.Data;
 
-namespace MilitaryBaseRater.MVC.Models
+namespace MilitaryBaseRater.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -34,7 +35,7 @@ namespace MilitaryBaseRater.MVC.Models
 
         public DbSet<Rater> Raters { get; set; }
         public DbSet<Base> Bases { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<BaseRating> Ratings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

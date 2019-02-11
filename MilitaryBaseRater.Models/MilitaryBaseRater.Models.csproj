@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,8 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseModels\BaseCreate.cs" />
+    <Compile Include="BaseModels\BaseDetail.cs" />
+    <Compile Include="BaseModels\BaseEdit.cs" />
+    <Compile Include="BaseModels\BaseListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaterModels\RaterCreate.cs" />
+    <Compile Include="RaterModels\RaterDetail.cs" />
+    <Compile Include="RaterModels\RaterEdit.cs" />
+    <Compile Include="RaterModels\RaterListItem.cs" />
+    <Compile Include="RatingModels\RatingCreate.cs" />
+    <Compile Include="RatingModels\RatingDetail.cs" />
+    <Compile Include="RatingModels\RatingEdit.cs" />
+    <Compile Include="RatingModels\RatingListItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

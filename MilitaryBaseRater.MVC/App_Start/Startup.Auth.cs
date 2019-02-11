@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MilitaryBaseRater.MVC.Models;
+using MilitaryBaseRater.Data;
 
 namespace MilitaryBaseRater.MVC
 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MilitaryBaseRater.Services
 {
-    public class Class1
+    class BaseRatingService
     {
     }
 }
