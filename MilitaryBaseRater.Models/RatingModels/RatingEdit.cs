@@ -9,7 +9,9 @@ namespace MilitaryBaseRater.Models.RatingModels
     public class RatingEdit
     {
         public int RatingID { get; set; }
-        
+
+        public int BaseID { get; set; }
+
         public decimal OverallRating { get; set; }
      
         public decimal HousingRating { get; set; }
@@ -21,5 +23,5 @@ namespace MilitaryBaseRater.Models.RatingModels
         public decimal TrainingSitesRating { get; set; }
 
         public string Comments { get; set; } 
-    }
+    } 
 }

@@ -1,0 +1,74 @@
+﻿@model MilitaryBaseRater.Models.RatingModels.RatingDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RatingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OverallRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OverallRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HousingRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HousingRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivitiesRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivitiesRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingSitesRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingSitesRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RatingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

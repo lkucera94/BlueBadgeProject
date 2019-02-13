@@ -24,7 +24,7 @@ namespace MilitaryBaseRater.Services
                 Branch = model.Branch,
                 Job = model.Job,
                 Rank = model.Rank,
-                Age = model.Age
+                Age = model.Age             
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -94,5 +94,18 @@ namespace MilitaryBaseRater.Services
 
             }
         }
+
+        public bool DeleteRater(int raterId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Raters.Single(r => r.RaterID == raterId);
+
+                ctx.Raters.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+      
     }
 }

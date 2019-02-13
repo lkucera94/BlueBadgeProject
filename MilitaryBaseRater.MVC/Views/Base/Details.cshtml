@@ -1,0 +1,50 @@
+﻿@model MilitaryBaseRater.Models.BaseModels.BaseDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BaseDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseState)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BaseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

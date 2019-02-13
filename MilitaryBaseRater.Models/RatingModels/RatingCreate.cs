@@ -10,7 +10,11 @@ namespace MilitaryBaseRater.Models.RatingModels
     public class RatingCreate
     {
         [Required]
-        public decimal OverallRating { get; set; }
+        public int BaseID { get; set; }
+        [Required]
+        public int RaterID { get; set; }
+        [Required]
+        public decimal OverallRating { get; set; } 
         [Required]
         public decimal HousingRating { get; set; }
         [Required]

@@ -8,8 +8,8 @@ namespace MilitaryBaseRater.Models.RatingModels
 {
     public class RatingDetail
     {
-        public int Rating { get; set; } 
-
+        public int RatingID { get; set; } 
+         
         public decimal OverallRating { get; set; }
         
         public decimal HousingRating { get; set; }

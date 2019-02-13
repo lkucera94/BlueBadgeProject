@@ -9,6 +9,8 @@ namespace MilitaryBaseRater.Models.RaterModels
 {
     public class RaterListItem
     {
+        public int RaterID { get; set; } 
+
         [Display(Name = "User Name")]
         public string UserName { get; set; }
 

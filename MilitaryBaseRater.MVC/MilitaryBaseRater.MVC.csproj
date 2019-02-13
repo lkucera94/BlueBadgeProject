@@ -174,8 +174,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseRatingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RaterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +243,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Rater\Index.cshtml" />
+    <Content Include="Views\Rater\Create.cshtml" />
+    <Content Include="Views\Base\Index.cshtml" />
+    <Content Include="Views\Base\Create.cshtml" />
+    <Content Include="Views\Base\Details.cshtml" />
+    <Content Include="Views\Base\Edit.cshtml" />
+    <Content Include="Views\Base\Delete.cshtml" />
+    <Content Include="Views\BaseRating\Index.cshtml" />
+    <Content Include="Views\BaseRating\Create.cshtml" />
+    <Content Include="Views\BaseRating\Details.cshtml" />
+    <Content Include="Views\BaseRating\Edit.cshtml" />
+    <Content Include="Views\BaseRating\Delete.cshtml" />
+    <Content Include="Views\Rater\Details.cshtml" />
+    <Content Include="Views\Rater\Edit.cshtml" />
+    <Content Include="Views\Rater\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -261,6 +279,14 @@
     <ProjectReference Include="..\MilitaryBaseRater.Data\MilitaryBaseRater.Data.csproj">
       <Project>{2D0D57A0-C101-4D61-AEB2-902B41B9E63C}</Project>
       <Name>MilitaryBaseRater.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MilitaryBaseRater.Models\MilitaryBaseRater.Models.csproj">
+      <Project>{5B217646-AD9F-4534-957B-E4936DE856F1}</Project>
+      <Name>MilitaryBaseRater.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MilitaryBaseRater.Services\MilitaryBaseRater.Services.csproj">
+      <Project>{62640C7D-13EB-4886-8443-E5066DC526E6}</Project>
+      <Name>MilitaryBaseRater.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
