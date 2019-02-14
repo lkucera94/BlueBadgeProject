@@ -18,18 +18,23 @@ namespace MilitaryBaseRater.Data
         public int BaseID { get; set; }
         [Required]
         public int RaterID { get; set; }
-        [Required]
-        public virtual Base Base { get; set; } 
+
+        public virtual Base Base { get; set; }
 
         [Required]
+        [Display(Name = "Overall Rating (Out of 10)")]
         public decimal OverallRating { get; set; }
         [Required]
+        [Display(Name = "Housing Rating (Out of 10)")]
         public decimal HousingRating { get; set; }
         [Required]
+        [Display(Name = "Food Rating (Out of 10)")]
         public decimal FoodRating { get; set; }
         [Required]
+        [Display(Name = "Activities Rating (Out of 10)")]
         public decimal ActivitiesRating { get; set; }
-        [Required] 
+        [Required]
+        [Display(Name = "Training Sites Rating (Out of 10)")]
         public decimal TrainingSitesRating { get; set; }
 
         public string Comments { get; set; }

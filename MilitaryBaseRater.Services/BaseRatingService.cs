@@ -20,9 +20,9 @@ namespace MilitaryBaseRater.Services
         {
             var rating = new BaseRating
             {
+                OwnerID = _userId,
                 BaseID = model.BaseID,
                 RaterID = model.RaterID,
-                OwnerID = _userId,
                 OverallRating = model.OverallRating,
                 HousingRating = model.HousingRating,
                 FoodRating = model.FoodRating,
@@ -48,6 +48,23 @@ namespace MilitaryBaseRater.Services
                     RatingID = b.RatingID,
                     BaseName = b.Base.BaseName,
                     OverallRating = b.OverallRating
+                });
+
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<RatingListItem> GetRatings()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Ratings.Select(r => new RatingListItem
+                {
+                    BaseID = r.BaseID,
+                    RatingID = r.RatingID,
+                    BaseName = r.Base.BaseName,
+                    OverallRating = r.OverallRating
+
                 });
 
                 return query.ToArray();

@@ -21,10 +21,13 @@ namespace MilitaryBaseRater.Services
         {
             Rater rater = new Rater()
             {
+                
+                OwnerID = _userID,
                 Branch = model.Branch,
                 Job = model.Job,
                 Rank = model.Rank,
-                Age = model.Age             
+                Age = model.Age,  
+                UserName = GetUserName()
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,12 +53,19 @@ namespace MilitaryBaseRater.Services
             {
                 var query = ctx.Raters.Select(r => new RaterListItem
                 {
+                    RaterID = r.RaterID,
                     UserName = r.UserName,
                     Branch = r.Branch,
                     Job = r.Job,
                     Rank = r.Rank,
                     Age = r.Age
-                });
+                }).ToList();
+
+                foreach(var rater in query)
+                {
+                    rater.DisplayInfo = $"{rater.Branch}, {rater.Job}, {rater.Rank}, {rater.Age}";
+                }
+
                 return query.ToArray();
             }
         }

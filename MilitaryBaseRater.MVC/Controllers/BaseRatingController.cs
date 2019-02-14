@@ -14,7 +14,12 @@ namespace MilitaryBaseRater.MVC.Controllers
         // GET: BaseRating
         public ActionResult Index()
         {
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BaseRatingService(userId);
+            var model = service.GetRatings();
+
+            return View(model);
+           
         }
         //GET BaseRating Create
         public ActionResult Create()
@@ -22,8 +27,15 @@ namespace MilitaryBaseRater.MVC.Controllers
             var baseService = new BaseService();
             var baseList = baseService.GetBases();
 
-            ViewBag.BaseID = new SelectList(baseList, "BaseID", "BaseName");
+            var raterId = Guid.Parse(User.Identity.GetUserId());
+            var raterService = new RaterService(raterId);
+            var raterList = raterService.GetRater();
+            
 
+            ViewBag.BaseID = new SelectList(baseList, "BaseID", "BaseName");
+            ViewBag.RaterID = new SelectList(raterList, "RaterID", "DisplayInfo");
+
+            
             return View();
         }
         //POST BaseRating Create
@@ -35,24 +47,39 @@ namespace MilitaryBaseRater.MVC.Controllers
                 return View(model);
             }
 
+
+            var service = CreateRaterService();
+
+            if (service.CreateRating(model))
+            {
+                return RedirectToAction("Index");
+            }
+
             var baseService = new BaseService();
             var baseList = baseService.GetBases();
 
+            var raterId = Guid.Parse(User.Identity.GetUserId());
+            var raterService = new RaterService(raterId);
+            var raterList = raterService.GetRater();
+
+
             ViewBag.BaseID = new SelectList(baseList, "BaseID", "BaseName");
+            ViewBag.RaterID = new SelectList(raterList, "RaterID", "DisplayInfo");
+         
 
             return View(model);
         }
         //GET BaseRating Details
         public ActionResult Details(int id)
         {
-            var service = CreateRatingService();
-            var model = service.GetRatingsByBaseID(id);
+            var service = CreateRaterService();
+            var model = service.GetRatingsByRatingID(id);
             return View(model);
         }
         //GET BaseRating Edit
         public ActionResult Edit(int id)
         {
-            var service = CreateRatingService();
+            var service = CreateRaterService();
             var detail = service.GetRatingsByRatingID(id);
             var model = new RatingEdit
             {
@@ -81,7 +108,7 @@ namespace MilitaryBaseRater.MVC.Controllers
                 return View(model);
             }
 
-            var service = CreateRatingService();
+            var service = CreateRaterService();
 
             if (service.EditBaseRating(model))
             {
@@ -94,7 +121,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         //GET BaseRating Delete
         public ActionResult Delete(int id)
         {
-            var service = CreateRatingService();
+            var service = CreateRaterService();
             var model = service.GetRatingsByRatingID(id);
             return View(model);
         }
@@ -103,18 +130,19 @@ namespace MilitaryBaseRater.MVC.Controllers
         [ActionName("Delete")]
         public ActionResult DeleteRating(int id)
         {
-            var service = CreateRatingService();
+            var service = CreateRaterService();
             service.DeleteRating(id);
 
             TempData["SaveResult"] = "Your rating was deleted";
             return RedirectToAction("Index");
         }
 
-        private BaseRatingService CreateRatingService()
+        private BaseRatingService CreateRaterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new BaseRatingService(userId);
             return service;
         }
+
     }
 }

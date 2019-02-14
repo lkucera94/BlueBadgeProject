@@ -22,5 +22,8 @@ namespace MilitaryBaseRater.Models.RaterModels
         public string Rank { get; set; }
         
         public int Age { get; set; }
+
+        [Display(Name = "Rater Information")]
+        public string DisplayInfo { get; set; }  
     }
 }
