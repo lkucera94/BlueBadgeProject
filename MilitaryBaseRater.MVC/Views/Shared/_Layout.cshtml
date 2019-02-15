@@ -24,9 +24,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("My Information", "Index", "Rater")</li>
-                    <li>@Html.ActionLink("My Bases", "Index", "Base")</li>
-                    <li>@Html.ActionLink("My Ratings", "Create", "BaseRating")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("My Information", "Index", "Rater")</li>
+                        <li>@Html.ActionLink("My Bases", "Index", "Base")</li>
+                        <li>@Html.ActionLink("My Ratings", "Create", "BaseRating")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url(https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +24,16 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar {
+    background-color: oldlace;
+}
+
+.jumbotron {
+    opacity: 0.3;
+    margin-top: 100px;
+    text-align: center;
+    color: black;
+    
+}
+
