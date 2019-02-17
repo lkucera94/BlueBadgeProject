@@ -29,11 +29,38 @@ textarea {
     background-color: oldlace;
 }
 
+
 .jumbotron {
-    opacity: 0.3;
+    background-color: oldlace;
     margin-top: 100px;
     text-align: center;
     color: black;
-    
 }
 
+#rating-home {
+    background-color: oldlace;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+}
+
+    #rating-home h2 {
+        text-align: center;
+    }
+
+    #rating-home p {
+        text-align: center;
+    }
+
+#base-home {
+    background-color: oldlace;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+}
+
+    #base-home h2 {
+        text-align: center;
+    }
+
+    #base-home p {
+        text-align: center;
+    }

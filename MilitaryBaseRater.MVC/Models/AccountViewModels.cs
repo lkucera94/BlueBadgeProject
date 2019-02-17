@@ -8,6 +8,7 @@ namespace MilitaryBaseRater.MVC.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        public string UserName { get; internal set; }
     }
 
     public class ExternalLoginListViewModel
@@ -49,9 +50,9 @@ namespace MilitaryBaseRater.MVC.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+        
+        public string UserName { get; set; } 
 
         [Required]
         [DataType(DataType.Password)]
