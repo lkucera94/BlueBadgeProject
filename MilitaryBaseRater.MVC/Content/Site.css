@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    color: black;
+    color: midnightblue;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -29,22 +29,35 @@ textarea {
     background-color: oldlace;
 }
 
+.navbar-header h3 {
+    color: crimson;
+    margin-top: 15px;
+    text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+}
 
 .jumbotron {
     background-color: oldlace;
     margin-top: 100px;
     text-align: center;
-    color: black;
+    color: midnightblue;
+    border: 1px solid crimson;
 }
+
+    .jumbotron h1 {
+        text-shadow: -.75px 0 crimson, .75px -.75px 0 crimson, -.75px .75px 0 crimson, .75px .75px 0 crimson;
+    }
 
 #rating-home {
     background-color: oldlace;
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
+    border: 1px solid navy;
 }
 
     #rating-home h2 {
         text-align: center;
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
     }
 
     #rating-home p {
@@ -55,12 +68,179 @@ textarea {
     background-color: oldlace;
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
+    border: 1px solid navy;
 }
 
     #base-home h2 {
         text-align: center;
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
     }
 
     #base-home p {
+        text-align: center;
+    }
+
+#about {
+    background-color: oldlace;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #about h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+    }
+
+
+#contact {
+    background-color: oldlace;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #contact h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+    }
+
+.col-md-4 {
+    background-color: oldlace;
+    border: 1px solid crimson;
+}
+
+#loginForm {
+    background-color: oldlace;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #loginForm h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+    }
+
+#register {
+    background-color: oldlace;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #register h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+    }
+
+#registerLink {
+    text-decoration: none;
+    color: navy;
+}
+
+    #registerLink:hover {
+        color: crimson;
+    }
+
+#loginLink {
+    text-decoration: none;
+    color: navy;
+}
+
+    #loginLink:hover {
+        color: crimson;
+    }
+
+.homeButton {
+    color: navy;
+}
+
+    .homeButton:hover {
+        text-decoration: none;
+        color: crimson;
+    }
+
+button {
+    background-color: oldlace;
+    border: 2px solid navy;
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 8px
+}
+
+.navbar-nav {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+footer {
+    color: oldlace;
+    text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+}
+
+#rater-index {
+    background-color: oldlace;
+    color: navy;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #rater-index h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+        text-align: center;
+    }
+
+    #rater-index p {
+        text-align: center;
+    }
+
+#rating-create {
+    background-color: oldlace;
+    color: navy;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #rating-create h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+        text-align: center;
+    }
+
+#rater-create {
+    background-color: oldlace;
+    color: navy;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #rater-create h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+        text-align: center;
+    }
+
+#rater-delete {
+    background-color: oldlace;
+    color: navy;
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+    border: 1px solid navy;
+}
+
+    #rater-delete h2 {
+        color: crimson;
+        text-shadow: -.5px 0 navy, .5px -.5px 0 navy, -.5px .5px 0 navy, .5px .5px 0 navy;
+        text-align: center;
+    }
+
+    #rater-delete h3 {
         text-align: center;
     }

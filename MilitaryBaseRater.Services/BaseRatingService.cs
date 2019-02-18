@@ -15,6 +15,7 @@ namespace MilitaryBaseRater.Services
         {
             _userId = userId;
         }
+        public BaseRatingService() { }
 
         public bool CreateRating(RatingCreate model)
         {

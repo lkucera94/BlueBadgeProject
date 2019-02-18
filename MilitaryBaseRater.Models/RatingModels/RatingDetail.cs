@@ -27,7 +27,18 @@ namespace MilitaryBaseRater.Models.RatingModels
         [Display(Name = "Training Sites Rating (Out of 10)")]
         public decimal TrainingSitesRating { get; set; }
 
-        public string Comments { get; set; }  
+        public string Comments { get; set; }
+
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        public string Branch { get; set; }
+
+        public string Job { get; set; }
+
+        public string Rank { get; set; }
+
+        public int Age { get; set; }
 
     }
 }

@@ -14,12 +14,19 @@ namespace MilitaryBaseRater.MVC.Controllers
         // GET: BaseRating
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new BaseRatingService(userId);
+
+            var service = new BaseRatingService();
             var model = service.GetRatings();
 
             return View(model);
            
+        }
+        public ActionResult MyRatings()
+        {
+            var service = CreateRaterService();
+            var model = service.GetRatings();
+
+            return View(model); 
         }
         //GET BaseRating Create
         public ActionResult Create()
@@ -72,7 +79,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         //GET BaseRating Details
         public ActionResult Details(int id)
         {
-            var service = CreateRaterService();
+            var service = new BaseRatingService();
             var model = service.GetRatingsByRatingID(id);
             return View(model);
         }

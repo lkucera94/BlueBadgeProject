@@ -21,6 +21,8 @@ namespace MilitaryBaseRater.Data
 
         public virtual Base Base { get; set; }
 
+        public virtual Rater Rater { get; set; } 
+
         [Required]
         [Display(Name = "Overall Rating (Out of 10)")]
         public decimal OverallRating { get; set; }

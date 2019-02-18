@@ -1,32 +1,16 @@
 ﻿@model IEnumerable<MilitaryBaseRater.Models.RatingModels.RatingListItem>
-
-@{
-    ViewBag.Title = "Index";
-}
 <div id="rater-index">
-
-<h2>Ratings</h2>
-
-
+<h2>My Ratings</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.RatingID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Branch)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Job)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.DisplayNameFor(model => model.BaseID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OverallRating)
@@ -43,19 +27,7 @@
             @Html.DisplayFor(modelItem => item.RatingID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Branch)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Job)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rank)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
+            @Html.DisplayFor(modelItem => item.BaseID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.OverallRating)
@@ -64,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.BaseName)
         </td>
         <td>
-           
+            @Html.ActionLink("Edit", "Edit", new { id = item.RatingID}) |
             @Html.ActionLink("Details", "Details", new { id = item.RatingID }) |
-            
+            @Html.ActionLink("Delete", "Delete", new { id = item.RatingID})
         </td>
     </tr>
 }

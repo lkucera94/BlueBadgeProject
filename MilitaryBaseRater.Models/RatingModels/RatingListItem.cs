@@ -17,5 +17,16 @@ namespace MilitaryBaseRater.Models.RatingModels
 
         [Display(Name = "Base Name")]
         public string BaseName { get; set; }
-    }
+
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        public string Branch { get; set; }
+
+        public string Job { get; set; }
+
+        public string Rank { get; set; }
+
+        public int Age { get; set; }
+    } 
 }

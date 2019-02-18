@@ -250,7 +250,6 @@
     <Content Include="Views\Base\Details.cshtml" />
     <Content Include="Views\Base\Edit.cshtml" />
     <Content Include="Views\Base\Delete.cshtml" />
-    <Content Include="Views\BaseRating\Index.cshtml" />
     <Content Include="Views\BaseRating\Create.cshtml" />
     <Content Include="Views\BaseRating\Details.cshtml" />
     <Content Include="Views\BaseRating\Edit.cshtml" />
@@ -258,6 +257,8 @@
     <Content Include="Views\Rater\Details.cshtml" />
     <Content Include="Views\Rater\Edit.cshtml" />
     <Content Include="Views\Rater\Delete.cshtml" />
+    <Content Include="Views\BaseRating\Index.cshtml" />
+    <Content Include="Views\BaseRating\MyRatings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

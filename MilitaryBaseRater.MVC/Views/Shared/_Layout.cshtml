@@ -17,21 +17,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <h3>Creative Title</h3>
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <div class="navbar-collapse collapse"> 
+                <ul class="nav navbar-nav"> 
+                    <li><button type="button">@Html.ActionLink("Home", "Index", "Home", routeValues:null, htmlAttributes: new{@class="homeButton btn-med"})</button></li>
+                    <li><button type="button">@Html.ActionLink("About", "About", "Home", routeValues: null, htmlAttributes: new { @class = "homeButton btn-md" })</button></li>
+                    <li><button type="button">@Html.ActionLink("Contact", "Contact", "Home", routeValues: null, htmlAttributes: new {@class = "homeButton btn-md" })</button></li>
+                    <li><button type="button">@Html.ActionLink("Ratings", "Index", "BaseRating", routeValues:null, htmlAttributes: new { @class = "homeButton btn-md" })</button></li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("My Information", "Index", "Rater")</li>
-                        <li>@Html.ActionLink("My Bases", "Index", "Base")</li>
-                        <li>@Html.ActionLink("My Ratings", "Create", "BaseRating")</li>
+                        <li><button type="button">@Html.ActionLink("My Information", "Index", "Rater", routeValues: null, htmlAttributes: new { @class = "homeButton btn-md" })</button></li>
+                        <li><button type="button">@Html.ActionLink("My Bases", "Index", "Base", routeValues: null, htmlAttributes: new { @class = "homeButton btn-md" })</button></li>
+                        <li><button type="button">@Html.ActionLink("My Ratings", "MyRatings", "BaseRating", routeValues: null, htmlAttributes: new { @class = "homeButton btn-md" })</button></li>
                     }
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial")  
             </div>
         </div>
     </div>
