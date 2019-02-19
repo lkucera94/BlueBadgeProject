@@ -39,11 +39,11 @@ namespace MilitaryBaseRater.Services
             }
         }
 
-        public IEnumerable<RatingListItem> GetRatingsByBaseID(int baseId)
+        public IEnumerable<RatingListItem> GetRatingsByRaterID(int raterId)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Ratings.Where(b => b.BaseID == baseId).Select(b => new RatingListItem
+                var query = ctx.Ratings.Where(b => b.RaterID == raterId).Select(b => new RatingListItem
                 {
                     BaseID = b.BaseID,
                     RatingID = b.RatingID,
@@ -63,6 +63,11 @@ namespace MilitaryBaseRater.Services
                 {
                     BaseID = r.BaseID,
                     RatingID = r.RatingID,
+                    UserName = r.Rater.UserName,
+                    Branch = r.Rater.Branch,
+                    Job = r.Rater.Job,
+                    Rank = r.Rater.Rank,
+                    Age = r.Rater.Age,
                     BaseName = r.Base.BaseName,
                     OverallRating = r.OverallRating
 
@@ -80,6 +85,8 @@ namespace MilitaryBaseRater.Services
                 var model = new RatingDetail()
                 {
                     RatingID = entity.RatingID,
+                    UserName = entity.Rater.UserName,
+                    BaseName = entity.Base.BaseName,
                     OverallRating = entity.OverallRating,
                     HousingRating = entity.HousingRating,
                     FoodRating = entity.FoodRating,

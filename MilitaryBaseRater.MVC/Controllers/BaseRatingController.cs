@@ -21,10 +21,10 @@ namespace MilitaryBaseRater.MVC.Controllers
             return View(model);
            
         }
-        public ActionResult MyRatings()
+        public ActionResult MyRatings(int raterId)
         {
             var service = CreateRaterService();
-            var model = service.GetRatings();
+            var model = service.GetRatingsByRaterID(raterId);
 
             return View(model); 
         }
@@ -32,7 +32,8 @@ namespace MilitaryBaseRater.MVC.Controllers
         public ActionResult Create()
         {
             var baseService = new BaseService();
-            var baseList = baseService.GetBases();
+            var id = Guid.Parse(User.Identity.GetUserId());
+            var baseList = baseService.GetBasesByUserID(id);
 
             var raterId = Guid.Parse(User.Identity.GetUserId());
             var raterService = new RaterService(raterId);
@@ -63,7 +64,8 @@ namespace MilitaryBaseRater.MVC.Controllers
             }
 
             var baseService = new BaseService();
-            var baseList = baseService.GetBases();
+            var id = Guid.Parse(User.Identity.GetUserId());
+            var baseList = baseService.GetBasesByUserID(id);
 
             var raterId = Guid.Parse(User.Identity.GetUserId());
             var raterService = new RaterService(raterId);
@@ -81,6 +83,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         {
             var service = new BaseRatingService();
             var model = service.GetRatingsByRatingID(id);
+
             return View(model);
         }
         //GET BaseRating Edit
@@ -98,6 +101,7 @@ namespace MilitaryBaseRater.MVC.Controllers
                 TrainingSitesRating = detail.TrainingSitesRating,
                 Comments = detail.Comments
             };
+
             return View(model);
         }
         //POST BaseRating Edit
@@ -124,6 +128,7 @@ namespace MilitaryBaseRater.MVC.Controllers
             }
             ModelState.AddModelError("", "Your rating could not be updated");
             return View(model);
+
         }
         //GET BaseRating Delete
         public ActionResult Delete(int id)

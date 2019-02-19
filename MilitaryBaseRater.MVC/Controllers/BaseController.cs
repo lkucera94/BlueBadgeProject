@@ -12,10 +12,10 @@ namespace MilitaryBaseRater.MVC.Controllers
     public class BaseController : Controller
     {
         // GET: Base
-        public ActionResult Index()
+        public ActionResult Index(Guid id)
         {
             var service = new BaseService();
-            var model = service.GetBases();
+            var model = service.GetBasesByUserID(id);
             return View(model);
         }
 

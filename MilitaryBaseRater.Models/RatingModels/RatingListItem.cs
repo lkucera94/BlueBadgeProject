@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MilitaryBaseRater.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,11 +16,9 @@ namespace MilitaryBaseRater.Models.RatingModels
         [Display(Name = "Overall Rating (Out of 10)")]
         public decimal OverallRating { get; set; }
 
-        [Display(Name = "Base Name")]
-        public string BaseName { get; set; }
-
-        [Display(Name = "User Name")]
         public string UserName { get; set; }
+
+        public string BaseName { get; set; }
 
         public string Branch { get; set; }
 
@@ -28,5 +27,9 @@ namespace MilitaryBaseRater.Models.RatingModels
         public string Rank { get; set; }
 
         public int Age { get; set; }
-    } 
+
+        public virtual Base Base { get; set; } 
+
+        public virtual Rater Rater { get; set; }
+    }  
 }

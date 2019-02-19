@@ -13,10 +13,10 @@
             @Html.DisplayNameFor(model => model.BaseID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OverallRating)
+            @Html.DisplayNameFor(model => model.BaseName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BaseName)
+            @Html.DisplayNameFor(model => model.OverallRating)
         </th>
         <th></th>
     </tr>
@@ -30,10 +30,10 @@
             @Html.DisplayFor(modelItem => item.BaseID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OverallRating)
+            @Html.DisplayFor(modelItem => item.BaseName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BaseName)
+            @Html.DisplayFor(modelItem => item.OverallRating)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.RatingID}) |

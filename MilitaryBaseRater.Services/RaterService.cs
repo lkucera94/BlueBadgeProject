@@ -70,6 +70,25 @@ namespace MilitaryBaseRater.Services
             }
         }
 
+        public RaterDetail GetRaterByUserID(Guid id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Raters.FirstOrDefault(e => e.OwnerID == id);
+
+                var model = new RaterDetail
+                {
+                    RaterID = entity.RaterID,
+                    Branch = entity.Branch,
+                    Job = entity.Job,
+                    UserName = entity.UserName,
+                    Rank = entity.Rank,
+                    Age = entity.Age,
+                };
+                return model;
+            }
+        }
+
         public RaterDetail GetRaterByID(int id)
         {
             using (var ctx = new ApplicationDbContext())

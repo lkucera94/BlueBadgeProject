@@ -56,5 +56,11 @@
     <Compile Include="RatingModels\RatingEdit.cs" />
     <Compile Include="RatingModels\RatingListItem.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MilitaryBaseRater.Data\MilitaryBaseRater.Data.csproj">
+      <Project>{2D0D57A0-C101-4D61-AEB2-902B41B9E63C}</Project>
+      <Name>MilitaryBaseRater.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

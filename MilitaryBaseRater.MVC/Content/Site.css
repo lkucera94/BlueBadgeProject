@@ -3,6 +3,7 @@
     padding-bottom: 20px;
     background-image: url(https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     color: midnightblue;
+    font-family: 'Russo One', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -36,11 +37,12 @@ textarea {
 }
 
 .jumbotron {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     margin-top: 100px;
     text-align: center;
     color: midnightblue;
     border: 1px solid crimson;
+    font-family: 'Russo One', sans-serif;
 }
 
     .jumbotron h1 {
@@ -48,7 +50,7 @@ textarea {
     }
 
 #rating-home {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
     border: 1px solid navy;
@@ -65,7 +67,7 @@ textarea {
     }
 
 #base-home {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
     border: 1px solid navy;
@@ -82,7 +84,7 @@ textarea {
     }
 
 #about {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
     border: 1px solid navy;
@@ -95,7 +97,7 @@ textarea {
 
 
 #contact {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
     border: 1px solid navy;
@@ -107,12 +109,12 @@ textarea {
     }
 
 .col-md-4 {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     border: 1px solid crimson;
 }
 
 #loginForm {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
     border: 1px solid navy;
@@ -124,7 +126,7 @@ textarea {
     }
 
 #register {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
     border: 1px solid navy;
@@ -182,7 +184,7 @@ footer {
 }
 
 #rater-index {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     color: navy;
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
@@ -200,7 +202,7 @@ footer {
     }
 
 #rating-create {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     color: navy;
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
@@ -214,7 +216,7 @@ footer {
     }
 
 #rater-create {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     color: navy;
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
@@ -228,7 +230,7 @@ footer {
     }
 
 #rater-delete {
-    background-color: oldlace;
+    background-color: rgba(253, 245, 230, 0.67);
     color: navy;
     padding: 10px 10px 10px 10px;
     margin-top: 30px;
@@ -244,3 +246,17 @@ footer {
     #rater-delete h3 {
         text-align: center;
     }
+
+img {
+    border-radius: 100%;
+    width: 170px;
+    height: 170px; 
+    margin-left: 45px;
+}
+.image-container{
+    display:inline-flex;
+    flex-wrap:nowrap;
+   
+    
+    
+}

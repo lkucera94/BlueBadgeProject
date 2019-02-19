@@ -17,7 +17,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RaterService(userId);
-            var model = service.GetRater();
+            var model = service.GetRaterByUserID(userId);
 
             return View(model);
         }

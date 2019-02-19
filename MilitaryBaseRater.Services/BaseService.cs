@@ -26,7 +26,7 @@ namespace MilitaryBaseRater.Services
             }
         }
 
-        public IEnumerable<BaseListItem> GetBases()
+        public IEnumerable<BaseListItem> GetBasesByUserID(Guid id)
         {
             using(var ctx = new ApplicationDbContext())
             {

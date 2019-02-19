@@ -14,6 +14,9 @@
             @Html.DisplayNameFor(model => model.RatingID)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.BaseName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Branch)
         </th>
         <th>
@@ -31,9 +34,6 @@
         <th>
             @Html.DisplayNameFor(model => model.OverallRating)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BaseName)
-        </th>
         <th></th>
     </tr>
 
@@ -41,6 +41,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.RatingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BaseName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Branch)
@@ -59,9 +62,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.OverallRating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BaseName)
         </td>
         <td>
            
