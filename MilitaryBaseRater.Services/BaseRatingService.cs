@@ -39,12 +39,12 @@ namespace MilitaryBaseRater.Services
             }
         }
 
-        public IEnumerable<RatingListItem> GetRatingsByRaterID(int raterId)
+        public IEnumerable<RatingListItem> GetRatingsByUserID(Guid userId) 
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Ratings.Where(b => b.RaterID == raterId).Select(b => new RatingListItem
-                {
+                var query = ctx.Ratings.Where(b => b.OwnerID == userId).Select(b => new RatingListItem
+                { 
                     BaseID = b.BaseID,
                     RatingID = b.RatingID,
                     BaseName = b.Base.BaseName,

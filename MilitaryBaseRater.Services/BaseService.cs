@@ -37,7 +37,7 @@ namespace MilitaryBaseRater.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Bases.Select(b => new BaseListItem
+                var query = ctx.Bases.Where(b => b.OwnerID == id).Select(b => new BaseListItem
                 {
                     BaseID = b.BaseID,
                     BaseName = b.BaseName                   

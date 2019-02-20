@@ -21,10 +21,11 @@ namespace MilitaryBaseRater.MVC.Controllers
             return View(model);
            
         }
-        public ActionResult MyRatings(int raterId)
+        public ActionResult MyRatings()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var service = CreateRaterService();
-            var model = service.GetRatingsByRaterID(raterId);
+            var model = service.GetRatingsByUserID(userId);
 
             return View(model); 
         }
@@ -37,7 +38,7 @@ namespace MilitaryBaseRater.MVC.Controllers
 
             var raterId = Guid.Parse(User.Identity.GetUserId());
             var raterService = new RaterService(raterId);
-            var raterList = raterService.GetRater();
+            var raterList = raterService.GetRatersByUserID(raterId);
             
 
             ViewBag.BaseID = new SelectList(baseList, "BaseID", "BaseName");
@@ -69,7 +70,7 @@ namespace MilitaryBaseRater.MVC.Controllers
 
             var raterId = Guid.Parse(User.Identity.GetUserId());
             var raterService = new RaterService(raterId);
-            var raterList = raterService.GetRater();
+            var raterList = raterService.GetRatersByUserID(raterId);
 
 
             ViewBag.BaseID = new SelectList(baseList, "BaseID", "BaseName");

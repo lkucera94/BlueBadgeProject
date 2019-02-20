@@ -19,5 +19,8 @@ namespace MilitaryBaseRater.Models.RaterModels
         public string Rank { get; set; }
         [Required]
         public int Age { get; set; }
+        [Required]
+        public Guid UserID { get; set; }
     }
 }
+ 

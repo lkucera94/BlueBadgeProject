@@ -17,7 +17,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RaterService(userId);
-            var model = service.GetRaterByUserID(userId);
+            var model = service.GetRatersByUserID(userId);
 
             return View(model);
         }
@@ -67,6 +67,7 @@ namespace MilitaryBaseRater.MVC.Controllers
             var detail = service.GetRaterByID(id);
             var model = new RaterEdit
             {
+                
                 RaterID = detail.RaterID,
                 Branch = detail.Branch,
                 Job = detail.Job,
@@ -77,14 +78,16 @@ namespace MilitaryBaseRater.MVC.Controllers
         }
         //POST Edit
         [HttpPost]
-        public ActionResult Edit(int id, RaterEdit model)
+        public ActionResult Edit( RaterEdit model)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            if(model.RaterID != id)
+            if(model.UserID != userId)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
