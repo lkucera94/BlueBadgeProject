@@ -10,10 +10,17 @@ namespace MilitaryBaseRater.Services
 {
     public class BaseService
     {
+        private readonly Guid _userID;
+
+        public BaseService(Guid userID)
+        {
+            _userID = userID; 
+        }
         public bool CreateBase(BaseCreate model)
         {
             Base militaryBase = new Base()
             {
+                OwnerID = _userID,
                 BaseName = model.BaseName,
                 BaseCity = model.BaseCity,
                 BaseState = model.BaseState

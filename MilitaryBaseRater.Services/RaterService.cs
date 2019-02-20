@@ -70,22 +70,22 @@ namespace MilitaryBaseRater.Services
             }
         }
 
-        public RaterDetail GetRaterByUserID(Guid id)
+        public IEnumerable<RaterListItem> GetRaterByUserID(Guid id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Raters.FirstOrDefault(e => e.OwnerID == id);
-
-                var model = new RaterDetail
+                var query = ctx.Raters.Where(e => e.OwnerID == id).Select(e => new RaterListItem
                 {
-                    RaterID = entity.RaterID,
-                    Branch = entity.Branch,
-                    Job = entity.Job,
-                    UserName = entity.UserName,
-                    Rank = entity.Rank,
-                    Age = entity.Age,
-                };
-                return model;
+                    RaterID = e.RaterID,
+                    UserName = e.UserName,
+                    Branch = e.Branch,
+                    Job = e.Job,
+                    Rank = e.Rank,
+                    Age = e.Age
+                });
+
+                return query.ToArray();
+
             }
         }
 

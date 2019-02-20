@@ -31,9 +31,9 @@ namespace MilitaryBaseRater.MVC.Controllers
         //GET BaseRating Create
         public ActionResult Create()
         {
-            var baseService = new BaseService();
-            var id = Guid.Parse(User.Identity.GetUserId());
-            var baseList = baseService.GetBasesByUserID(id);
+            var baseId = Guid.Parse(User.Identity.GetUserId());
+            var baseService = new BaseService(baseId);
+            var baseList = baseService.GetBasesByUserID(baseId);
 
             var raterId = Guid.Parse(User.Identity.GetUserId());
             var raterService = new RaterService(raterId);
@@ -63,9 +63,9 @@ namespace MilitaryBaseRater.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            var baseService = new BaseService();
-            var id = Guid.Parse(User.Identity.GetUserId());
-            var baseList = baseService.GetBasesByUserID(id);
+            var baseId = Guid.Parse(User.Identity.GetUserId());
+            var baseService = new BaseService(baseId);
+            var baseList = baseService.GetBasesByUserID(baseId);
 
             var raterId = Guid.Parse(User.Identity.GetUserId());
             var raterService = new RaterService(raterId);

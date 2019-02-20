@@ -12,10 +12,12 @@ namespace MilitaryBaseRater.MVC.Controllers
     public class BaseController : Controller
     {
         // GET: Base
-        public ActionResult Index(Guid id)
+        public ActionResult Index()
         {
-            var service = new BaseService();
-            var model = service.GetBasesByUserID(id);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BaseService(userId);
+            var model = service.GetBasesByUserID(userId);
+
             return View(model);
         }
 
@@ -34,7 +36,7 @@ namespace MilitaryBaseRater.MVC.Controllers
                 return View(model);
             }
 
-            var service = new BaseService();
+            var service = CreateRaterService();
             if (service.CreateBase(model))
             {
                 return RedirectToAction("Index");
@@ -45,7 +47,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         //GET Base Details
         public ActionResult Details(int id)
         {
-            var service = new BaseService();
+            var service = CreateRaterService();
             var model = service.GetBaseByID(id);
 
             return View(model);
@@ -53,7 +55,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         //GET Base Edit
         public ActionResult Edit(int id)
         {
-            var service = new BaseService();
+            var service = CreateRaterService();
             var detail = service.GetBaseByID(id);
             var model = new BaseEdit
             {
@@ -80,7 +82,7 @@ namespace MilitaryBaseRater.MVC.Controllers
                 return View(model);
             }
 
-            var service = new BaseService();
+            var service = CreateRaterService();
 
             if (service.EditBase(model))
             {
@@ -93,7 +95,7 @@ namespace MilitaryBaseRater.MVC.Controllers
         //GET Base Delete
         public ActionResult Delete(int id)
         {
-            var service = new BaseService();
+            var service = CreateRaterService();
             var model = service.GetBaseByID(id);
             return View(model);
         }
@@ -102,14 +104,19 @@ namespace MilitaryBaseRater.MVC.Controllers
         [ActionName("Delete")]
         public ActionResult DeleteBase(int id)
         {
-            var service = new BaseService();
+            var service = CreateRaterService();
 
             service.DeleteBase(id);
 
             TempData["SaveResult"] = "Your base was deleted";
             return RedirectToAction("Index");
         }
+        private BaseService CreateRaterService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BaseService(userId);
+            return service;
+        }
 
-      
     }
 }
