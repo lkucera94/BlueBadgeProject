@@ -67,7 +67,7 @@ namespace MilitaryBaseRater.MVC.Controllers
             var detail = service.GetRaterByID(id);
             var model = new RaterEdit
             {
-                
+                UserID = detail.UserID,
                 RaterID = detail.RaterID,
                 Branch = detail.Branch,
                 Job = detail.Job,
