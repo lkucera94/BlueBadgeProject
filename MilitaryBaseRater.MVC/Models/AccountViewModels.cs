@@ -50,7 +50,7 @@ namespace MilitaryBaseRater.MVC.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Username (Will appear next to ratings)")]
+        [Display(Name = "Username")]
         
         public string UserName { get; set; } 
 
@@ -71,7 +71,7 @@ namespace MilitaryBaseRater.MVC.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "Username (Will be visible to public next to ratings)")]
         public string UserName { get; set; } 
 
         [Required]
