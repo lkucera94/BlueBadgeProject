@@ -15,7 +15,7 @@ namespace MilitaryBaseRater.Models.RatingModels
 
         [Display(Name = "Overall Rating (Out of 10)")]
         public decimal OverallRating { get; set; }
-
+        [Display(Name ="Username")]
         public string UserName { get; set; }
 
         public string BaseName { get; set; }

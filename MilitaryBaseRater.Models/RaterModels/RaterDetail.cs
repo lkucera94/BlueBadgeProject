@@ -13,7 +13,7 @@ namespace MilitaryBaseRater.Models.RaterModels
 
         public int RaterID { get; set; }
 
-        [Display(Name ="User Name")]
+        [Display(Name ="Username")]
         public string UserName { get; set; }
 
         public string Branch { get; set; }

@@ -30,7 +30,7 @@ namespace MilitaryBaseRater.Models.RatingModels
 
         public string Comments { get; set; }
 
-        [Display(Name = "User Name")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         [Display(Name = "Base Name")]
